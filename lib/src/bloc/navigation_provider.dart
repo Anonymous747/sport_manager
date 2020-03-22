@@ -1,5 +1,5 @@
 class NavigationProvider {
-    String currentNavigation = 'Home';
+    String currentNavigation = 'ManagerRoom';
 
     void uodateNavigation(String navigation)
     {
