@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sport_manager/src/bloc/navigation_bloc.dart';
 import 'package:sport_manager/src/ui/results_fragment.dart';
 
 class ManagerRoom extends StatefulWidget{
@@ -22,6 +23,7 @@ class _ManagerRoom extends State<ManagerRoom> {
           ),
           new Expanded(child: new Text('Item index')),
           new RaisedButton(onPressed: () {
+            //bloc.updateNavigation('Results');
             Navigator.push(context, MaterialPageRoute(builder: (context) => Results()));
           }, child: Text('Go to Results'))
         ],
