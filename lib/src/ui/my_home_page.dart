@@ -6,6 +6,10 @@ import 'package:sport_manager/src/ui/team_list_fragment.dart';
 import 'package:sport_manager/src/ui/results_fragment.dart';
 
 class MyHomePage extends StatefulWidget {
+  final String _title;
+  
+  MyHomePage(this._title);
+  
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -68,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
             return FutureMatches();
           }
           if (bloc.navigationProvider.currentNavigation == "Results") {
-            return Results();
+            return Results('res');
           } 
         },
       )

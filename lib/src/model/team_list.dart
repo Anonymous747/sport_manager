@@ -16,8 +16,24 @@ class TeamList extends StatelessWidget {
           itemBuilder: (context, index) {
             return new ListTile(
               title: new Text("${team[index].title}"),
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) {
+                      return Scaffold(
+                        //appBar:  AppBar(
+                          //title: Text('Saved Suggestions'),
+                        //),
+                        body: ListView(children: <Widget>[
+                          Text(team[index].title),
+                        ],),
+                      ); 
+                    }                    
+                  )
+                );
+              },
             );
-          }
+          } 
         )
       )
     );

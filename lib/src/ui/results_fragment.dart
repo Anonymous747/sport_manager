@@ -3,22 +3,28 @@ import 'package:sport_manager/src/bloc/recive_data.dart';
 import 'package:sport_manager/src/model/team_list.dart';
 
 class Results extends StatefulWidget{
-  Results({Key key}) : super(key : key);
+  final String _title;
+  
+  Results(this._title);
   @override
-  _Results createState() => _Results();
+  _Results createState() => _Results(_title);
 }
 
 class _Results extends State<Results> {
+  final String _title;
+  
+  _Results(this._title);
+
   @override 
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Results',
+      title: _title,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Results'),
+          title: Text(_title),
         ),
         body: FutureBuilder(
           future: fetchAlbums(),

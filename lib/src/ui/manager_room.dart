@@ -24,7 +24,7 @@ class _ManagerRoom extends State<ManagerRoom> {
           new Expanded(child: new Text('Item index')),
           new RaisedButton(onPressed: () {
             //bloc.updateNavigation('Results');
-            Navigator.push(context, MaterialPageRoute(builder: (context) => Results()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Results('res1')));
           }, child: Text('Go to Results'))
         ],
       )
