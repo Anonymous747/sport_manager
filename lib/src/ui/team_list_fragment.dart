@@ -8,6 +8,6 @@ class TeamList extends StatefulWidget{
 class _TeamList extends State<TeamList> {
   @override 
   Widget build(BuildContext context) {
-    return null;
+    return Container();
   }
 }

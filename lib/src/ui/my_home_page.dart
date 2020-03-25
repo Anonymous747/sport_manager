@@ -6,9 +6,7 @@ import 'package:sport_manager/src/ui/team_list_fragment.dart';
 import 'package:sport_manager/src/ui/results_fragment.dart';
 
 class MyHomePage extends StatefulWidget {
-  final String _title;
-  
-  MyHomePage(this._title);
+  MyHomePage();
   
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -18,7 +16,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: Text(bloc.navigationProvider.currentNavigation),),
       drawer: Drawer(
         child: Column(
           children: <Widget> [
@@ -63,16 +61,19 @@ class _MyHomePageState extends State<MyHomePage> {
         initialData: bloc.navigationProvider.currentNavigation,
         builder: (context, snapshot) {
           if (bloc.navigationProvider.currentNavigation == "ManagerRoom") {
-            return ManagerRoom();
+           Navigator.push(context, MaterialPageRoute(builder: (context) => ManagerRoom())); //return ManagerRoom();
           }
           if (bloc.navigationProvider.currentNavigation == "TeamList") {
-            return TeamList();
+           Navigator.push(context, MaterialPageRoute(builder: (context) => TeamList())); //return ManagerRoom();
+            //return TeamList();
           }
           if (bloc.navigationProvider.currentNavigation == "FutureMatches") {
-            return FutureMatches();
+           Navigator.push(context, MaterialPageRoute(builder: (context) => FutureMatches())); //return ManagerRoom();
+            //return FutureMatches();
           }
           if (bloc.navigationProvider.currentNavigation == "Results") {
-            return Results('res');
+           Navigator.push(context, MaterialPageRoute(builder: (context) => Results())); //return ManagerRoom();
+            //return Results();
           } 
         },
       )
