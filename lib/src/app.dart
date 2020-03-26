@@ -8,9 +8,9 @@ class MyApp extends StatelessWidget
     return MaterialApp(
       title: 'Sport Manager App',
       theme: ThemeData(
-        primarySwatch: Colors.brown,
+        primarySwatch: Colors.brown, 
       ),
-      home: MyHomePage(),
+      home: MyHomePage('title'),
     );
   }
 }
