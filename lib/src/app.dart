@@ -1,5 +1,9 @@
+import 'package:sport_manager/src/ui/future_matches.dart';
+import 'package:sport_manager/src/ui/manager_room.dart';
 import 'package:sport_manager/src/ui/my_home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:sport_manager/src/ui/results_fragment.dart';
+import 'package:sport_manager/src/ui/team_list_fragment.dart';
 
 class MyApp extends StatelessWidget
 {
@@ -10,7 +14,16 @@ class MyApp extends StatelessWidget
       theme: ThemeData(
         primarySwatch: Colors.brown, 
       ),
-      home: MyHomePage('title'),
+      routes: {
+        '/m': (context) => ManagerRoom(),
+        '/f': (context) => FutureMatches(),
+        '/t': (context) => TeamList(),
+        '/r': (context) => Results(),
+        '/': (context) => MyHomePage(),
+      },
+      initialRoute: '/',
+      //home: MyHomePage(),
+      
     );
   }
 }

@@ -1,15 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sport_manager/src/bloc/navigation_bloc.dart';
-import 'package:sport_manager/src/ui/manager_room.dart';
-import 'package:sport_manager/src/ui/future_matches.dart';
-import 'package:sport_manager/src/ui/team_list_fragment.dart';
-import 'package:sport_manager/src/ui/results_fragment.dart';
 
 class MyHomePage extends StatefulWidget {
-  final String _title;
-  
-  MyHomePage(this._title);
-  
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -18,7 +9,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: Text('Home Page'),),
       drawer: Drawer(
         child: Column(
           children: <Widget> [
@@ -31,51 +22,34 @@ class _MyHomePageState extends State<MyHomePage> {
               title: Text("Manager room"),
               onTap: () {
                 Navigator.of(context).pop();
-                bloc.updateNavigation("ManagerRoom");
+                Navigator.pushNamed(context, '/m');
               },
             ),
             ListTile(
               title: Text("Team List"),
               onTap: () {
                 Navigator.of(context).pop();
-                bloc.updateNavigation("TeamList");
+                Navigator.pushNamed(context, '/t');
               },
             ),
             ListTile(
               title: Text("Future Matches"),
               onTap: () {
                 Navigator.of(context).pop();
-                bloc.updateNavigation("FutureMatches");
+                Navigator.pushNamed(context, '/f');
               },
             ),
             ListTile(
               title: Text("Results"),
               onTap: () {
                 Navigator.of(context).pop();
-                bloc.updateNavigation("Results");
+                Navigator.pushNamed(context, '/r');
               },
             ),
           ]
         ),
       ),
-      body: StreamBuilder(
-        stream: bloc.getNavigation,
-        initialData: bloc.navigationProvider.currentNavigation,
-        builder: (context, snapshot) {
-          if (bloc.navigationProvider.currentNavigation == "ManagerRoom") {
-            return ManagerRoom();
-          }
-          if (bloc.navigationProvider.currentNavigation == "TeamList") {
-            return TeamList();
-          }
-          if (bloc.navigationProvider.currentNavigation == "FutureMatches") {
-            return FutureMatches();
-          }
-          if (bloc.navigationProvider.currentNavigation == "Results") {
-            return Results('res');
-          } 
-        },
-      )
+      //body: ,
     );
   }
 }
