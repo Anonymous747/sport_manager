@@ -21,21 +21,8 @@ class TeamList extends StatelessWidget {
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) {
                       return Scaffold(
-                        //appBar:  AppBar(
-                          //title: Text('Saved Suggestions'),
-                        //),
                         body: ListView(children: <Widget>[
                           Text(team[index].title),
-                        ],),
-                      ); 
-                    }                    
-                  )
-                );
-              },
-            );
-          } 
-        )
-      )
-    );
+                        ], ), ); } ) ); }, ); } ) ) );
   }
 }

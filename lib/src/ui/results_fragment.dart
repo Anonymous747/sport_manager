@@ -1,3 +1,5 @@
+import 'package:http/http.dart' as http;
+
 import 'package:flutter/material.dart';
 import 'package:sport_manager/src/bloc/recive_data.dart';
 import 'package:sport_manager/src/model/team_list.dart';
@@ -13,7 +15,7 @@ class _Results extends State<Results> {
     return Scaffold(
       appBar: AppBar(title: Text('Results'),),
       body: FutureBuilder(
-        future: fetchAlbums(),
+        future: fetchAlbums(http.Client()),
         builder: (context, snapshot) {
           if (snapshot.hasError) print(snapshot.error);
             return snapshot.hasData 

@@ -1,4 +1,5 @@
 import 'package:sport_manager/src/ui/future_matches.dart';
+import 'package:sport_manager/src/ui/login_page.dart';
 import 'package:sport_manager/src/ui/manager_room.dart';
 import 'package:sport_manager/src/ui/my_home_page.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget
         '/f': (context) => FutureMatches(),
         '/t': (context) => TeamList(),
         '/r': (context) => Results(),
-        '/': (context) => MyHomePage(),
+        '/h': (context) => MyHomePage(),
+        '/': (context) => LoginPage(),
       },
       initialRoute: '/',
       //home: MyHomePage(),
